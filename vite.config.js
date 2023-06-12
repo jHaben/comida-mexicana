@@ -21,7 +21,7 @@ export default defineConfig({
       },
     }),
   ],
-  base: "/comida-mexicana/",
+  // base: "/comida-mexicana/",
   define: { 'process.env': {} },
   resolve: {
     alias: {
