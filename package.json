@@ -1,12 +1,16 @@
 {
   "name": "comida-mexicana",
+  "homepage": "https://jhaben.github.io/comida-mexicana/",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint . --fix --ignore-path .gitignore"
+    "lint": "eslint . --fix --ignore-path .gitignore",
+    "deploy": "gh-pages -d dist"
+
+
   },
   "dependencies": {
     "@mdi/font": "7.0.96",
@@ -23,6 +27,7 @@
     "@vitejs/plugin-vue": "^4.0.0",
     "eslint": "^8.37.0",
     "eslint-plugin-vue": "^9.3.0",
+    "gh-pages": "^5.0.0",
     "sass": "^1.60.0",
     "vite": "^4.2.0",
     "vite-plugin-vuetify": "^1.0.0"
