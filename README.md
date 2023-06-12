@@ -1,4 +1,6 @@
-#comida mexicana
+# comida mexicana
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2b15795c-088e-4450-b5e5-48173638229f/deploy-status)](https://app.netlify.com/sites/comida-mexicana/deploys)
 
 ## Project setup
 
