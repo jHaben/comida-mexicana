@@ -1,6 +1,9 @@
 <template>
-  <v-main>
+  <v-main >
+    <v-sheet height="100%" color="secondary">
     <router-view />
+
+  </v-sheet>
   </v-main>
 </template>
 

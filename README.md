@@ -1,4 +1,4 @@
-# essentials
+# comida mexicana
 
 ## Project setup
 
