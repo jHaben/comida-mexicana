@@ -8,7 +8,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/comida-mexicana/',
+  base: "/comida-mexicana/",
   plugins: [
     vue({ 
       template: { transformAssetUrls }
