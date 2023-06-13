@@ -63,7 +63,11 @@
                 </v-expand-transition>
             </div>
             <div v-else>
-                Loading...
+                <v-row>
+                    <v-col class="d-flex justify-center ma-4">
+                        <v-progress-circular :size="50" color="secondary" indeterminate></v-progress-circular>
+                    </v-col>
+                </v-row>
             </div>
         </v-card>
     </v-container>
@@ -77,31 +81,15 @@ let show = ref(false);
 const recipe = ref(null);
 
 onMounted(async () => {
-    const now = new Date();
-    const start = new Date(now.getFullYear(), 0, 0);
-    const diff = now - start;
-    const oneDay = 1000 * 60 * 60 * 24;
-    const dayOfYear = Math.floor(diff / oneDay);
-
-    // Use modulo to keep the day within the range 1-173
-    const recipeNumber = (dayOfYear % 173) + 1;
-
-    const options = {
-        method: 'GET',
-        url: `https://the-mexican-food-db.p.rapidapi.com/${recipeNumber}`,
-        headers: {
-            " ",
-            'X-RapidAPI-Host': 'the-mexican-food-db.p.rapidapi.com'
-        }
-    };
-
     try {
-        const response = await axios.request(options);
-        recipe.value = response.data;
+        const response = await axios.get('https://p1t6tahkz0.execute-api.us-east-1.amazonaws.com/mexican');
+        recipe.value = JSON.parse(response.data.body);
     } catch (error) {
         console.error(error);
     }
 });
+
+
 
 </script>
   
