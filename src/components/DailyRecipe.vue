@@ -42,6 +42,22 @@
                 <v-expand-transition>
                     <div v-show="show">
                         <v-divider></v-divider>
+                        <v-row>
+                            <v-spacer />
+                            <v-col cols="auto" class="d-flex  ma-2">
+                                <!-- <v-btn color="secondary" icon="mdi-printer" /> -->
+
+                            </v-col>
+                            <v-col cols="auto" class="d-flex  ma-2">
+                                <v-btn color="secondary" icon="mdi-download" @click="saveAsPDF" />
+
+                            </v-col>
+                            <v-col cols="auto" class="d-flex  ma-2">
+                                <!-- <v-btn color="secondary" icon="mdi-share" /> -->
+
+                            </v-col>
+                            <v-spacer />
+                        </v-row>
                         <v-sheet rounded color="white" class="ma-3">
                             <v-card-text>
                                 <div class="mt-2" style="font-size: 18px;" v-for="(ingredient, index) in recipe.ingredients"
@@ -70,12 +86,16 @@
                 </v-row>
             </div>
         </v-card>
+
+
     </v-container>
 </template>
   
 <script setup>
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
+import jsPDF from 'jspdf';
+
 
 let show = ref(false);
 const recipe = ref(null);
@@ -90,9 +110,66 @@ onMounted(async () => {
 });
 
 
+const saveAsPDF = () => {
+    const pdf = new jsPDF();
+
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    const pageHeight = pdf.internal.pageSize.getHeight();
+    const marginLeft = 10;
+    const marginRight = 10;
+    const marginTop = 10;
+    const marginBottom = 10;
+    const usableWidth = pageWidth - marginLeft - marginRight;
+    const lineHeight = 7; // This is the approximate line height for the default font size
+
+    // Start the Y position at the top margin
+    let y = marginTop;
+
+    // Format the recipe data into a string
+    let recipeText = `Title: ${recipe.value.title}\n\nDescription: ${recipe.value.description}\n\nDifficulty: ${recipe.value.difficulty}\n\nPortion: ${recipe.value.portion}\n\nTime: ${recipe.value.time}\n\n`;
+
+    recipeText += 'Ingredients:\n';
+    recipe.value.ingredients.forEach((ingredient) => {
+        recipeText += `- ${ingredient}\n`;
+    });
+
+    recipeText += '\nMethod:\n\n';
+    recipe.value.method.forEach((step) => {
+
+
+        Object.entries(step).forEach(([key, instruction]) => {
+            // Wrap the instruction text
+            const instructionLines = pdf.splitTextToSize(instruction, usableWidth);
+            recipeText += `${key}:\n ${instructionLines.join("\n")}`;
+        });
+
+        recipeText += '\n\n';
+    });
+
+    // Split the entire text into lines so that it can be added to the PDF with line breaks
+    const lines = pdf.splitTextToSize(recipeText, usableWidth);
+
+    // Add the lines to the PDF one by one
+    lines.forEach((line) => {
+        // If adding this line would go past the bottom margin, add a new page and reset the Y position
+        if (y + lineHeight > pageHeight - marginBottom) {
+            pdf.addPage();
+            y = marginTop;
+        }
+
+        // Add the line to the PDF
+        pdf.text(line, marginLeft, y);
+
+        // Increase the Y position for the next line
+        y += lineHeight;
+    });
+
+    // Save the PDF
+    pdf.save('recipe.pdf');
+};
+
+
 
 </script>
   
-<style>
-/* Add any styles here */
-</style>
+<style></style>
