@@ -53,7 +53,7 @@
 
                             </v-col>
                             <v-col cols="auto" class="d-flex  ma-2">
-                                <!-- <v-btn color="secondary" icon="mdi-share" /> -->
+                                <v-btn color="secondary" icon="mdi-share" />
 
                             </v-col>
                             <v-spacer />
