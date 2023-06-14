@@ -1,7 +1,7 @@
 <template>
 
 
-  <v-app-bar app :elevation="2" rounded color="primary">
+  <v-app-bar class="no-print" app :elevation="2" rounded color="primary">
     <v-app-bar-title  class="text-h4 font-weight-bold">
 
 
@@ -21,3 +21,12 @@
 <script setup>
   //
 </script>
+
+<style>
+
+@media print {
+  .no-print {
+    display: none;
+  }
+}
+</style>

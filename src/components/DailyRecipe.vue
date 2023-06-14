@@ -45,7 +45,7 @@
                         <v-row>
                             <v-spacer />
                             <v-col cols="auto" class="d-flex  ma-2">
-                                <!-- <v-btn color="secondary" icon="mdi-printer" /> -->
+                                <v-btn color="secondary" icon="mdi-printer" @click="printPage" />
 
                             </v-col>
                             <v-col cols="auto" class="d-flex  ma-2">
@@ -168,6 +168,10 @@ const saveAsPDF = () => {
     pdf.save('recipe.pdf');
 };
 
+
+const printPage = () => {
+    window.print();
+};
 
 
 </script>
