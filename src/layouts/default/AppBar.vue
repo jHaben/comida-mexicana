@@ -23,10 +23,10 @@
 </script>
 
 <style>
-
 @media print {
   .no-print {
-    display: none;
+    display: none !important;
   }
 }
+
 </style>
