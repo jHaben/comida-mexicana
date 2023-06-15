@@ -1,5 +1,6 @@
 <template>
-  <v-footer class="no-print"  color="primary" app>
+  <div class="no-print"  >
+  <v-footer color="primary" app>
     <v-row>
 
       <v-col class="text-center mt-4" cols="12">
@@ -9,6 +10,8 @@
 
     </v-row>
   </v-footer>
+
+</div>
 </template>
   
 <script setup>
