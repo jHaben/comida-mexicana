@@ -53,8 +53,21 @@
 
                             </v-col>
                             <v-col cols="auto" class="d-flex  ma-2">
-                                <v-btn color="secondary" icon="mdi-share" />
 
+                                <div class="d-flex justify-space-around">
+                                    <v-menu>
+
+                                        <template v-slot:activator="{ props }">
+                                            <v-btn color="secondary" v-bind="props" icon="mdi-share" />
+                                        </template>
+                                        <v-list style="background-color: #73cb2b;">
+                                       
+                                            <v-list-item v-for="(item, index) in items" :key="index" :value="index">
+                                                <v-icon size="40" :icon="item.icon" @click="item.share"></v-icon>
+                                            </v-list-item>
+                                        </v-list>
+                                    </v-menu>
+                                </div>
                             </v-col>
                             <v-spacer />
                         </v-row>
@@ -95,6 +108,31 @@
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
 import jsPDF from 'jspdf';
+
+
+
+// Share functions
+const shareToFacebook = () => {
+    const url = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href);
+    window.open(url, '_blank');
+}
+
+const shareToTwitter = () => {
+    const url = 'https://twitter.com/share?url=' + encodeURIComponent(window.location.href);
+    window.open(url, '_blank');
+}
+
+const shareToLinkedIn = () => {
+    const url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(window.location.href);
+    window.open(url, '_blank');
+}
+
+// Data
+const items = ref([
+    { icon: 'mdi-facebook', share: shareToFacebook },
+    { icon: 'mdi-twitter', share: shareToTwitter },
+    { icon: 'mdi-linkedin', share: shareToLinkedIn },
+])
 
 
 let show = ref(false);
