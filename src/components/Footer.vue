@@ -1,17 +1,17 @@
 <template>
-  <div class="no-print"  >
-  <v-footer color="primary" app>
-    <v-row>
+  <div class="no-print">
+    <v-footer color="primary" app>
+      <v-row>
 
-      <v-col class="text-center mt-4" cols="12">
-        {{ new Date().getFullYear() }} — <strong>Construida sobre <a
-            href="https://rocasolida.tech">RocaSolida.Tech</a></strong>
-      </v-col>
+        <v-col class="text-center mt-4" cols="12">
+          {{ new Date().getFullYear() }} — <strong>Construida sobre <a
+              href="https://rocasolida.tech">RocaSolida.Tech</a></strong>
+        </v-col>
 
-    </v-row>
-  </v-footer>
+      </v-row>
+    </v-footer>
 
-</div>
+  </div>
 </template>
   
 <script setup>
@@ -24,7 +24,6 @@
     display: none !important;
   }
 }
-
 </style>
 
   
