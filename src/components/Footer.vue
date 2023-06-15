@@ -1,5 +1,5 @@
 <template>
-  <v-footer color="primary" app>
+  <v-footer class="no-print"  color="primary" app>
     <v-row>
 
       <v-col class="text-center mt-4" cols="12">
@@ -15,7 +15,13 @@
 
 </script>
   
-<style scoped>
-/* Add your styles here */
+<style>
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
 </style>
+
   
