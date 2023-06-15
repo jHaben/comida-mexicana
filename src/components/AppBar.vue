@@ -6,7 +6,7 @@
 
 
 
-      Comida Mexicana
+      Receta Mexicana Diaria
     </v-app-bar-title>
     <template v-slot:append>
       <!-- <v-btn icon="mdi-heart"></v-btn>
