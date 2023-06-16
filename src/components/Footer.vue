@@ -1,6 +1,6 @@
 <template>
   <div class="no-print">
-    <v-footer color="primary" app>
+    <v-footer color="primary"  app>
       <v-row>
 
         <v-col class="text-center mt-4" cols="12">

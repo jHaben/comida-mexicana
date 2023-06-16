@@ -1,6 +1,5 @@
 <template>
-    <v-container>
-        <v-card class="mx-auto" max-width="400" color="primary" elevation="8">
+        <v-card class="ma-2" max-width="400"  color="primary" elevation="8">
 
             <div v-if="recipe">
                 <v-img max-height="400" :src="recipe.image" alt="recipe image" cover></v-img>
@@ -101,7 +100,6 @@
         </v-card>
 
 
-    </v-container>
 </template>
   
 <script setup>
