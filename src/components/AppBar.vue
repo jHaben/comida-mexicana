@@ -6,7 +6,7 @@
 
 
 
-      Receta Mexicana Diaria
+      Receta Mexicana
     </v-app-bar-title>
     <template v-slot:append>
       <!-- <v-btn icon="mdi-heart"></v-btn>
