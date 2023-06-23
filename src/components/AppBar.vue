@@ -7,7 +7,9 @@
 
 
       Receta Mexicana
+      <div class="text-body-2 font-weight-light ma-1">Download or print a new recipe each day.</div>
     </v-app-bar-title>
+  
     <template v-slot:append>
       <!-- <v-btn icon="mdi-heart"></v-btn>
 
