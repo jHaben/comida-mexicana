@@ -133,8 +133,8 @@ const adds = ref([vj, rocaSolida]);
 const goToUrl = (url) => {
     window.open(url);
 };
-const sendEmail() {
-      window.location.href = 'mailto:jrhaben@gmail.com';
-    },
+const sendEmail = () => {
+  window.location.href = 'mailto:jrhaben@gmail.com';
+};
 </script>
   
