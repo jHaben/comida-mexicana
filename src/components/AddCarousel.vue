@@ -2,22 +2,7 @@
 <template>
     <v-card class="ma-2 " max-width="272" max-height="300" color="primary">
         <v-carousel :show-arrows="false" cycle interval="5000">
-            <v-carousel-item>
-                <v-btn depressed block text :href="'https://rocasolida.tech'" target="_blank">
 
-                    <v-sheet color="white" height="100%" min-width="272" class="d-flex flex-column align-center  ">
-
-                        <h4 class="text-center mt-12">Juntos construimos sobre</h4>
-                        <h2 class="font-weight-bold text-center mx-2">
-                            <span style="color: #07689F;">ROCA</span>
-                            <span style="color: #A2D5F2;">SOLIDA</span>
-                            <span style="color: #07689F;">.TECH</span>
-                        </h2>
-                        <v-img width="50%" max-height="175" src="@/assets/brick.png" aspect-ratio="1" contain></v-img>
-                    </v-sheet>
-                </v-btn>
-
-            </v-carousel-item>
             <v-carousel-item>
                 <v-btn depressed block  text :href="'https://vjtotalservices.com'" target="_blank">
 
@@ -109,18 +94,6 @@ const adds = ref([vj, rocaSolida]);
                 </div>
             </v-carousel-item>
 
-            <v-carousel-item>
-                <div style="height: 100%;" @click="goToUrl('https://rocasolida.tech')">
-                    <v-sheet color="primary" height="100%" min-width="272"
-                        class="d-flex flex-column align-center justify-center">
-                        <v-btn color="secondary">
-                            <h2 class="font-weight-bold text-center">
-                                <span >ADVERTISE HERE</span>
-                            </h2>
-                        </v-btn>
-                    </v-sheet>
-                </div>
-            </v-carousel-item>
         </v-carousel>
     </v-card>
 </template>
