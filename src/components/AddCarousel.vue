@@ -110,7 +110,7 @@ const adds = ref([vj, rocaSolida]);
             </v-carousel-item>
 
             <v-carousel-item>
-                <div style="height: 100%;" @click="goToUrl('https://rocasolida.tech')">
+                <div style="height: 100%;" @click="sendEmail()">
                     <v-sheet color="primary" height="100%" min-width="272"
                         class="d-flex flex-column align-center justify-center">
                         <v-btn color="secondary">
