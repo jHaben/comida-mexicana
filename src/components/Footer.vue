@@ -4,8 +4,8 @@
       <v-row>
 
         <v-col class="text-center mt-4" cols="12">
-          {{ new Date().getFullYear() }} — <strong>Construida sobre <a
-              href="https://rocasolida.tech">RocaSolida.Tech</a></strong>
+          {{ new Date().getFullYear() }} 
+          
         </v-col>
 
       </v-row>
