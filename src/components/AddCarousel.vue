@@ -43,7 +43,7 @@
             </v-carousel-item>
 
             <v-carousel-item>
-                <v-btn depressed block text :href="'https://rocasolida.tech'" target="_blank">
+                <v-btn depressed block text @click="sendEmail">>
                     <v-sheet color="primary" height="100%" min-width="272"
                         class="d-flex flex-column align-center justify-center ">
 
@@ -133,5 +133,8 @@ const adds = ref([vj, rocaSolida]);
 const goToUrl = (url) => {
     window.open(url);
 };
+const sendEmail() {
+      window.location.href = 'mailto:jrhaben@gmail.com';
+    },
 </script>
   
