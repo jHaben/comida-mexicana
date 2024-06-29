@@ -43,10 +43,10 @@
                         <v-divider></v-divider>
                         <v-row>
                             <v-spacer />
-                            <v-col cols="auto" class="d-flex  ma-2">
+                         <!--   <v-col cols="auto" class="d-flex  ma-2">
                                 <v-btn color="secondary" icon="mdi-printer" @click="printPage" />
 
-                            </v-col>
+                            </v-col> -->
                             <v-col cols="auto" class="d-flex  ma-2">
                                 <v-btn color="secondary" icon="mdi-download" @click="saveAsPDF" />
 
